@@ -1,48 +1,79 @@
-import React from 'react';
-import classnames from 'classnames';
-import Layout from '@theme/Layout';
-import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import useBaseUrl from '@docusaurus/useBaseUrl';
-import styles from './styles.module.css';
+import React from "react";
+import classnames from "classnames";
+import Layout from "@theme/Layout";
+import Link from "@docusaurus/Link";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import useBaseUrl from "@docusaurus/useBaseUrl";
+import styles from "./styles.module.css";
 
 const features = [
   {
-    title: <>Easy to Use</>,
-    imageUrl: 'img/undraw_docusaurus_mountain.svg',
+    title: <>Microservices-Ready</>,
+    imageUrl: "img/undraw_docusaurus_tree.svg",
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Retransmit is designed to handle the plumbing between Microservices and
+        let developers focus on writing business logic.
       </>
     ),
   },
   {
-    title: <>Focus on What Matters</>,
-    imageUrl: 'img/undraw_docusaurus_tree.svg',
+    title: <>Traffic Control</>,
+    imageUrl: "img/undraw_docusaurus_mountain.svg",
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        Load balancing, metering, response aggregation, rate limiting, circuit
+        breakers, authentication, analytics and much more.
       </>
     ),
   },
   {
-    title: <>Powered by React</>,
-    imageUrl: 'img/undraw_docusaurus_react.svg',
+    title: <>Extensible</>,
+    imageUrl: "img/undraw_docusaurus_react.svg",
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Write hooks in JavaScript to customize requests and responses flowing
+        through Restransmit. Write plugins to handle custom protocols.
+      </>
+    ),
+  },
+  {
+    title: <>Analytics and Monitoring</>,
+    imageUrl: "img/undraw_docusaurus_tree.svg",
+    description: (
+      <>
+        Real-time dashboards to see what's happening across your application
+        stack. Alerts when your servers go south.
+      </>
+    ),
+  },
+  {
+    title: <>Developer Friendly</>,
+    imageUrl: "img/undraw_docusaurus_mountain.svg",
+    description: (
+      <>
+        Developers will love the built-in support for Distributed Tracing and
+        Logging. As well as dashboards to easily visualize what went wrong.
+      </>
+    ),
+  },
+
+  {
+    title: <>Free and Open Source</>,
+    imageUrl: "img/undraw_docusaurus_react.svg",
+    description: (
+      <>
+        Retransmit Core is Free and Open Source. We are actively looking for
+        contributors and testers. Check our GitHub profile.
       </>
     ),
   },
 ];
 
-function Feature({imageUrl, title, description}) {
+function Feature({ imageUrl, title, description }) {
   const imgUrl = useBaseUrl(imageUrl);
   return (
-    <div className={classnames('col col--4', styles.feature)}>
+    <div className={classnames("col col--4", styles.feature)}>
       {imgUrl && (
         <div className="text--center">
           <img className={styles.featureImage} src={imgUrl} alt={title} />
@@ -56,22 +87,24 @@ function Feature({imageUrl, title, description}) {
 
 function Home() {
   const context = useDocusaurusContext();
-  const {siteConfig = {}} = context;
+  const { siteConfig = {} } = context;
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
-      <header className={classnames('hero hero--primary', styles.heroBanner)}>
+      title={siteConfig.title}
+      description="Description will go into a meta tag in <head />"
+    >
+      <header className={classnames("hero hero--primary", styles.heroBanner)}>
         <div className="container">
           <h1 className="hero__title">{siteConfig.title}</h1>
           <p className="hero__subtitle">{siteConfig.tagline}</p>
           <div className={styles.buttons}>
             <Link
               className={classnames(
-                'button button--outline button--secondary button--lg',
-                styles.getStarted,
+                "button button--outline button--secondary button--lg",
+                styles.getStarted
               )}
-              to={useBaseUrl('docs/')}>
+              to={useBaseUrl("docs/")}
+            >
               Get Started
             </Link>
           </div>

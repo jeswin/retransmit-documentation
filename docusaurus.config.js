@@ -1,16 +1,16 @@
 module.exports = {
   title: 'Retransmit',
-  tagline: 'Lightweight API and WebSocket Gateway',
-  url: 'https://your-docusaurus-test-site.com',
+  tagline: 'HTTP and WebSocket API Gateway',
+  url: 'https://retransmit.io',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'Retransmit', // Usually your GitHub org/user name.
+  projectName: 'restransmit', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'My Site',
+      title: 'Retransmit',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'Retransmit Logo',
         src: 'img/logo.svg',
       },
       links: [
@@ -35,11 +35,15 @@ module.exports = {
           title: 'Docs',
           items: [
             {
-              label: 'Style Guide',
+              label: 'Introduction',
               to: 'docs/',
             },
             {
-              label: 'Second Doc',
+              label: 'Get Started',
+              to: 'docs/get-started/',
+            },
+            {
+              label: 'Documentation',
               to: 'docs/doc2/',
             },
           ],
@@ -48,16 +52,12 @@ module.exports = {
           title: 'Community',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              label: 'GitHub',
+              href: 'https://github.com/retransmit/retransmit',
             },
             {
               label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              href: 'https://twitter.com/retransmit_io',
             },
           ],
         },
@@ -68,14 +68,15 @@ module.exports = {
               label: 'Blog',
               to: 'blog',
             },
+            // TODO
             {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              label: 'About',
+              href: 'https://www.retransmit.io/about',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Retransmit, Inc. Icons from undraw.co. Built with Docusaurus.`,
     },
   },
   presets: [
