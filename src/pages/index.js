@@ -8,7 +8,7 @@ import styles from "./styles.module.css";
 
 const features = [
   {
-    title: <>Microservices-Ready</>,
+    title: <>For Microservices</>,
     imageUrl: "img/undraw_docusaurus_tree.svg",
     description: (
       <>
@@ -23,17 +23,17 @@ const features = [
     description: (
       <>
         Load balancing, metering, response aggregation, rate limiting, circuit
-        breakers, authentication, analytics and much more.
+        breakers, authentication, web jobs and more.
       </>
     ),
   },
   {
-    title: <>Extensible</>,
+    title: <>WebSockets Support</>,
     imageUrl: "img/undraw_docusaurus_react.svg",
     description: (
       <>
-        Write hooks in JavaScript to customize requests and responses flowing
-        through Restransmit. Write plugins to handle custom protocols.
+        Retransmit can stream responses to WebSocket clients by polling multiple
+        backend services or by reading from Redis queues.
       </>
     ),
   },
@@ -48,16 +48,15 @@ const features = [
     ),
   },
   {
-    title: <>Developer Friendly</>,
-    imageUrl: "img/undraw_docusaurus_mountain.svg",
+    title: <>Extensible</>,
+    imageUrl: "img/undraw_docusaurus_react.svg",
     description: (
       <>
-        Developers will love the built-in support for Distributed Tracing and
-        Logging. As well as dashboards to easily visualize what went wrong.
+        Write hooks in JavaScript to customize requests and responses flowing
+        through Restransmit. Write plugins to handle custom protocols.
       </>
     ),
   },
-
   {
     title: <>Free and Open Source</>,
     imageUrl: "img/undraw_docusaurus_react.svg",
