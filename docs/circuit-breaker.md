@@ -1,7 +1,7 @@
 ---
-id: doc1
-title: Style Guide
-sidebar_label: Style Guide
+id: circuit-breaker
+title: Circuit Breaker
+sidebar_label: Circuit Breaker
 ---
 
 You can write content using [GitHub-flavored Markdown syntax](https://github.github.com/gfm/).

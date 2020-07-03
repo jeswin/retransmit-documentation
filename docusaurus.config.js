@@ -1,83 +1,83 @@
 module.exports = {
-  title: 'Retransmit',
-  tagline: 'HTTP and WebSocket API Gateway',
-  url: 'https://retransmit.io',
-  baseUrl: '/',
-  favicon: 'img/favicon.ico',
-  organizationName: 'Retransmit', // Usually your GitHub org/user name.
-  projectName: 'restransmit', // Usually your repo name.
+  title: "Retransmit",
+  tagline: "HTTP and WebSocket API Gateway",
+  url: "https://retransmit.io",
+  baseUrl: "/",
+  favicon: "img/favicon.ico",
+  organizationName: "Retransmit", // Usually your GitHub org/user name.
+  projectName: "restransmit", // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'Retransmit',
+      title: "Retransmit",
       logo: {
-        alt: 'Retransmit Logo',
-        src: 'img/logo.svg',
+        alt: "Retransmit Logo",
+        src: "img/logo.svg",
       },
       links: [
         {
-          to: 'docs/',
-          activeBasePath: 'docs',
-          label: 'Docs',
-          position: 'left',
+          to: "docs/",
+          activeBasePath: "docs",
+          label: "Docs",
+          position: "left",
         },
         {
-          to: 'pricing/',
-          activeBasePath: 'pricing',
-          label: 'Pricing',
-          position: 'left',
+          to: "pricing/",
+          activeBasePath: "pricing",
+          label: "Pricing",
+          position: "left",
         },
-        {to: 'blog', label: 'Blog', position: 'left'},
+        { to: "blog", label: "Blog", position: "left" },
         {
-          href: 'https://github.com/facebook/docusaurus',
-          label: 'GitHub',
-          position: 'right',
+          href: "https://github.com/facebook/docusaurus",
+          label: "GitHub",
+          position: "right",
         },
       ],
     },
     footer: {
-      style: 'dark',
+      style: "dark",
       links: [
         {
-          title: 'Docs',
+          title: "Docs",
           items: [
             {
-              label: 'Introduction',
-              to: 'docs/',
+              label: "Introduction",
+              to: "docs/",
             },
             {
-              label: 'Get Started',
-              to: 'docs/get-started/',
+              label: "Get Started",
+              to: "docs/get-started/",
             },
             {
-              label: 'Documentation',
-              to: 'docs/doc2/',
+              label: "Documentation",
+              to: "docs/contributing/",
             },
           ],
         },
         {
-          title: 'Community',
+          title: "Community",
           items: [
             {
-              label: 'GitHub',
-              href: 'https://github.com/retransmit/retransmit',
+              label: "GitHub",
+              href: "https://github.com/retransmit/retransmit",
             },
             {
-              label: 'Twitter',
-              href: 'https://twitter.com/retransmit_io',
+              label: "Twitter",
+              href: "https://twitter.com/retransmit_io",
             },
           ],
         },
         {
-          title: 'More',
+          title: "More",
           items: [
             {
-              label: 'Blog',
-              to: 'blog',
+              label: "Blog",
+              to: "blog",
             },
             // TODO
             {
-              label: 'About',
-              href: 'https://www.retransmit.io/about',
+              label: "About",
+              href: "https://www.retransmit.io/about",
             },
           ],
         },
@@ -87,24 +87,24 @@ module.exports = {
   },
   presets: [
     [
-      '@docusaurus/preset-classic',
+      "@docusaurus/preset-classic",
       {
         docs: {
           // It is recommended to set document id as docs home page (`docs/` path).
-          homePageId: 'doc1',
-          sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
+          homePageId: "intro",
+          sidebarPath: require.resolve("./sidebars.js"),
+          // // Please change this to your repo.
+          // editUrl:
+          //   'https://github.com/retransmit/retransmit-documentation/master/website/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/blog/',
+          // editUrl:
+          //   'https://github.com/retransmit/retransmit-documentation/master/website/',
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve("./src/css/custom.css"),
         },
       },
     ],

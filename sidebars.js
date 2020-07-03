@@ -1,6 +1,25 @@
 module.exports = {
   someSidebar: {
-    Docusaurus: ['doc1', 'doc2', 'doc3'],
-    Features: ['mdx'],
+    Docs: [
+      "intro",
+      "install",
+      "getting-started",
+      "response-aggregation",
+      "request-transform",
+      "response-transform",
+      "https-and-cors",
+      "caching",
+      "authentication",
+      "rollback",
+      "rate-limiting",
+      "circuit-breaker",
+      "load-balancing",
+      "request-pipelining",
+      "web-jobs",
+      "hooks",
+      "redis-web-backends",
+    ],
+    "Web Sockets": ["websockets"],
+    More: ["contributing", "license"],
   },
 };
