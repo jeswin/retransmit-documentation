@@ -3,15 +3,12 @@ id: hooks
 title: Hooks
 ---
 
-You can write JSX and use React components within your Markdown thanks to [MDX](https://mdxjs.com/).
+One of the strengths of Retransmit is that every aspect of the request pipleine can be customized. You could transform incoming requests, write custom functions to merge the responses, write hooks for web socket events etc. You may not always need this flexibility, but it's there if you ever need it.
 
-export const Highlight = ({children, color}) => ( <span style={{
-      backgroundColor: color,
-      borderRadius: '2px',
-      color: '#fff',
-      padding: '0.2rem',
-    }}>{children}</span> );
+This section discusses various hooks and events available for customization.
 
-<Highlight color="#25c2a0">Docusaurus green</Highlight> and <Highlight color="#1877F2">Facebook blue</Highlight> are my favorite colors.
+## HTTP Requests
 
-I can write **Markdown** alongside my _JSX_!
+
+## WebSocket Requests
+
