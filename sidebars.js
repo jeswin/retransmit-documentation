@@ -18,6 +18,7 @@ module.exports = {
       "web-jobs",
       "hooks",
       "redis-web-backends",
+      "auto-scaling",
     ],
     "Web Sockets": ["websockets"],
     More: ["contributing", "license"],

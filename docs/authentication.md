@@ -4,197 +4,186 @@ title: Authentication
 sidebar_label: Authentication
 ---
 
-You can write content using [GitHub-flavored Markdown syntax](https://github.github.com/gfm/).
+Currently Retransmit only supports JWT based authentication. It internally uses the [https://github.com/auth0/node-jsonwebtoken](jsonwebtoken) library. So all the options supported by jsonwebtoken can be used here.
 
-## Markdown Syntax
-
-To serve as an example page when styling markdown based Docusaurus sites.
-
-## Headers
-
-# H1 - Create the best documentation
-
-## H2 - Create the best documentation
-
-### H3 - Create the best documentation
-
-#### H4 - Create the best documentation
-
-##### H5 - Create the best documentation
-
-###### H6 - Create the best documentation
-
----
-
-## Emphasis
-
-Emphasis, aka italics, with *asterisks* or _underscores_.
-
-Strong emphasis, aka bold, with **asterisks** or __underscores__.
-
-Combined emphasis with **asterisks and _underscores_**.
-
-Strikethrough uses two tildes. ~~Scratch this.~~
-
----
-
-## Lists
-
-1. First ordered list item
-1. Another item
-   - Unordered sub-list.
-1. Actual numbers don't matter, just that it's a number
-   1. Ordered sub-list
-1. And another item.
-
-* Unordered list can use asterisks
-
-- Or minuses
-
-+ Or pluses
-
----
-
-## Links
-
-[I'm an inline-style link](https://www.google.com/)
-
-[I'm an inline-style link with title](https://www.google.com/ "Google's Homepage")
-
-[I'm a reference-style link][arbitrary case-insensitive reference text]
-
-[I'm a relative reference to a repository file](../blob/master/LICENSE)
-
-[You can use numbers for reference-style link definitions][1]
-
-Or leave it empty and use the [link text itself].
-
-URLs and URLs in angle brackets will automatically get turned into links. http://www.example.com/ or <http://www.example.com/> and sometimes example.com (but not on GitHub, for example).
-
-Some text to show that the reference links can follow later.
-
-[arbitrary case-insensitive reference text]: https://www.mozilla.org/
-[1]: http://slashdot.org/
-[link text itself]: http://www.reddit.com/
-
----
-
-## Images
-
-Here's our logo (hover to see the title text):
-
-Inline-style: ![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png 'Logo Title Text 1')
-
-Reference-style: ![alt text][logo]
-
-[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png 'Logo Title Text 2'
-
----
-
-## Code
-
-```javascript
-var s = 'JavaScript syntax highlighting';
-alert(s);
-```
-
-```python
-s = "Python syntax highlighting"
-print(s)
-```
+JWT is typically passed in the Authorization header as follows:
 
 ```
-No language indicated, so no syntax highlighting.
-But let's throw in a <b>tag</b>.
+Authorization: Bearer eyJhbGciOiJIUzI1NiIXVCJ9...
 ```
 
-```js {2}
-function highlightMe() {
-  console.log('This line can be highlighted!');
-}
+If this is how you are passing JWT, the configuration is as simple as:
+
+```ts
+// Example 1
+module.exports = {
+  http: {
+    routes: {
+      "/users": {
+        GET: {
+          caching: {
+            expiry: 200,
+          },
+          services: {
+            userservice: {
+              type: "http" as "http",
+              url: "http://localhost:6666/users",
+            },
+          },
+        },
+      },
+    },
+    authentication: {
+      type: "jwt",
+      key: "secret", //publicKey or shared secret
+    },
+  },
+};
 ```
 
----
+Authentication can also be applied for individual routes.
 
-## Tables
+```ts
+// Example 2
+module.exports = {
+  // parts omitted for brevity
+  services: {
+    userservice: {
+      type: "http" as "http",
+      url: "http://localhost:6666/users",
+      authentication: {
+        type: "jwt",
+        key: "secret", //publicKey or shared secret
+      },
+    },
+  },
+};
+```
 
-Colons can be used to align columns.
+If Authentication is applied for all services (as in Example 1) but you specifically want to exclude some services, specify 'none' for the authentication field.
 
-| Tables        |      Are      |   Cool |
-| ------------- | :-----------: | -----: |
-| col 3 is      | right-aligned | \$1600 |
-| col 2 is      |   centered    |   \$12 |
-| zebra stripes |   are neat    |    \$1 |
+```ts
+// Example 3
+module.exports = {
+  // parts omitted for brevity
+  services: {
+    messagingservice: {
+      type: "http" as "http",
+      url: "http://localhost:6667/messages",
+      authentication: "none",
+    },
+  },
+};
+```
 
-There must be at least 3 dashes separating each header cell. The outer pipes (|) are optional, and you don't need to make the raw Markdown line up prettily. You can also use inline Markdown.
+### The JWT Token Field
 
-| Markdown | Less      | Pretty     |
-| -------- | --------- | ---------- |
-| _Still_  | `renders` | **nicely** |
-| 1        | 2         | 3          |
+If the JWT is not passed in the 'Authorization' header, you need to specify how to fetch it from the request.
 
----
+If it's in a field in the header, use the jwtHeaderField option:
 
-## Blockquotes
+```ts
+// Example 4
+module.exports = {
+  // parts omitted for brevity
+  services: {
+    userservice: {
+      type: "http" as "http",
+      url: "http://localhost:6666/users",
+      authentication: {
+        type: "jwt",
+        key: "secret", //publicKey or shared secret
+        jwtField: "x-myapp-jwt",
+      },
+    },
+  },
+};
+```
 
-> Blockquotes are very handy in email to emulate reply text. This line is part of the same quote.
+If you need more control, implement the getJwt function. The following example gets it from the request body.
 
-Quote break.
+```ts
+// Example 5
+module.exports = {
+  // parts omitted for brevity
+  services: {
+    userservice: {
+      type: "http" as "http",
+      url: "http://localhost:6666/users",
+      authentication: {
+        type: "jwt",
+        key: "secret", //publicKey or shared secret
+        getJwt: (request) => request.body.jwt,
+      },
+    },
+  },
+};
+```
 
-> This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can _put_ **Markdown** into a blockquote.
+### Customize Token Verification
 
----
+By default, retransmit will simple check the existence of the JWT. In many cases, you want to do more - such as whether certain roles are present. That can be done with the 'verify' hook.
 
-## Inline HTML
+```ts
+// Example 6
+module.exports = {
+  // parts omitted for brevity
+  services: {
+    userservice: {
+      type: "http" as "http",
+      url: "http://localhost:6666/users",
+      authentication: {
+        type: "jwt",
+        key: "secret", //publicKey or shared secret
+        verify: async (token) => token.role === "chatuser",
+      },
+    },
+  },
+};
+```
 
-<dl>
-  <dt>Definition list</dt>
-  <dd>Is something people use sometimes.</dd>
+### Custom Error Response
 
-  <dt>Markdown in HTML</dt>
-  <dd>Does *not* work **very** well. Use HTML <em>tags</em>.</dd>
-</dl>
+Retransmit sends HTTP 401 with the Body "Unauthorized." as the response. But this can be changed with the 'errorStatus' and 'errorBody' options. errorBody can also take a JSON object.
 
----
+```ts
+// Example 7
+module.exports = {
+  // parts omitted for brevity
+  services: {
+    userservice: {
+      type: "http" as "http",
+      url: "http://localhost:6666/users",
+      authentication: {
+        type: "jwt",
+        key: "secret", //publicKey or shared secret
+        errorStatus: 400,
+        error: "You are not allowed to access this page.",
+      },
+    },
+  },
+};
+```
 
-## Line Breaks
+### Error Logging
 
-Here's a line for us to start with.
+The reason why token validation failed can be obtained with the onError hook.
 
-This line is separated from the one above by two newlines, so it will be a _separate paragraph_.
+```ts
+// Example 8
+module.exports = {
+  // parts omitted for brevity
+  services: {
+    userservice: {
+      type: "http" as "http",
+      url: "http://localhost:6666/users",
+      authentication: {
+        type: "jwt",
+        key: "secret", //publicKey or shared secret
+        onError: (error, request) => {
+          console.log(error);
+        },
+      }}}};
+```
 
-This line is also a separate paragraph, but... This line is only separated by a single newline, so it's a separate line in the _same paragraph_.
 
----
-
-## Admonitions
-
-:::note
-
-This is a note
-
-:::
-
-:::tip
-
-This is a tip
-
-:::
-
-:::important
-
-This is important
-
-:::
-
-:::caution
-
-This is a caution
-
-:::
-
-:::warning
-
-This is a warning
-
-:::

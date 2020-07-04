@@ -7,7 +7,7 @@ sidebar_label: Response Aggregation
 Let's borrow the configuration from the previous article.
 
 ```ts
-const config: AppConfig = {
+module.exports = {
   http: {
     routes: {
       "/dashboard": {
@@ -33,7 +33,7 @@ Retransmit merges responses that are received (into a final response body) in th
 Fields being overwritten is a problem. Fortunately, there's an easy fix - 'mergeField'.
 
 ```ts
-const config = {
+module.exports = {
   // parts omitted for brevity
   services: {
     accountservice: {

@@ -8,7 +8,7 @@ Retransmit gives you a simple way to transform requests sent to various services
 The simplest approach tool to use here is the 'mapping' property in configuration. In the following example the header field "x-app-instance" is mapped to the field "x-app-id". So userservice will see "x-app-id" instead.
 
 ```ts
-const config: AppConfig = {
+module.exports = {
   http: {
     routes: {
       "/users": {
@@ -28,7 +28,7 @@ const config: AppConfig = {
 The same thing applies for request bodies. In the following example, the field 'username' in the request body is mapped to 'uname' before sending to accountservice.
 
 ```ts
-const config = {
+module.exports = {
   // parts omitted for brevity
   services: {
     accountservice: {
@@ -45,7 +45,7 @@ const config = {
 You could exclude things too. The following example excludes a specific header as well as a field from the request body.
 
 ```ts
-const config = {
+module.exports = {
   // parts omitted for brevity
   services: {
     userservice: {

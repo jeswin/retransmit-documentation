@@ -26,7 +26,7 @@ Let's look at a basic config file. Our first goal is to expose an end point whic
 And here it is.
 
 ```ts
-const config: AppConfig = {
+module.exports = {
   http: {
     routes: {
       "/dashboard": {
