@@ -53,7 +53,7 @@ const features = [
     description: (
       <>
         Write hooks in JavaScript to customize requests and responses flowing
-        through Restransmit. Write plugins to handle custom protocols.
+        through Retransmit. Write plugins to handle custom protocols.
       </>
     ),
   },

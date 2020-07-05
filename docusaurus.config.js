@@ -5,7 +5,7 @@ module.exports = {
   baseUrl: "/",
   favicon: "img/favicon.ico",
   organizationName: "retransmit", // Usually your GitHub org/user name.
-  projectName: "restransmit", // Usually your repo name.
+  projectName: "retransmit", // Usually your repo name.
   themeConfig: {
     navbar: {
       title: "Retransmit",
