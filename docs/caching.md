@@ -88,6 +88,8 @@ module.exports = {
 
 ### Varying by headers, query or body
 
+You can store caches separately for each 
+
 ```ts
 // Cache GET /users for 20 seconds
 module.exports = {
