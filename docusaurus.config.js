@@ -4,7 +4,7 @@ module.exports = {
   url: "https://retransmit.io",
   baseUrl: "/",
   favicon: "img/favicon.ico",
-  organizationName: "Retransmit", // Usually your GitHub org/user name.
+  organizationName: "retransmit", // Usually your GitHub org/user name.
   projectName: "restransmit", // Usually your repo name.
   themeConfig: {
     navbar: {
