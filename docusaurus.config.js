@@ -1,7 +1,7 @@
 module.exports = {
   title: "Retransmit",
   tagline: "HTTP and WebSocket API Gateway",
-  url: "https://retransmit.io",
+  url: "https://retransmit.netlify.com",
   baseUrl: "/",
   favicon: "img/favicon.ico",
   organizationName: "retransmit", // Usually your GitHub org/user name.

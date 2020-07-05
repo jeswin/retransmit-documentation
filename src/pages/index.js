@@ -9,7 +9,7 @@ import styles from "./styles.module.css";
 const features = [
   {
     title: <>For Microservices</>,
-    imageUrl: "img/undraw_docusaurus_tree.svg",
+    imageUrl: "img/undraw_product_teardown.svg",
     description: (
       <>
         Retransmit is designed to handle the plumbing between Microservices and
@@ -19,7 +19,7 @@ const features = [
   },
   {
     title: <>Traffic Control</>,
-    imageUrl: "img/undraw_docusaurus_mountain.svg",
+    imageUrl: "img/undraw_fast_loading.svg",
     description: (
       <>
         Load balancing, metering, response aggregation, rate limiting, circuit
@@ -29,7 +29,7 @@ const features = [
   },
   {
     title: <>WebSockets Support</>,
-    imageUrl: "img/undraw_docusaurus_react.svg",
+    imageUrl: "img/websocket.svg",
     description: (
       <>
         Retransmit can stream responses to WebSocket clients by polling multiple
@@ -39,7 +39,7 @@ const features = [
   },
   {
     title: <>Analytics and Monitoring</>,
-    imageUrl: "img/undraw_docusaurus_tree.svg",
+    imageUrl: "img/undraw_dashboard.svg",
     description: (
       <>
         Real-time dashboards to see what's happening across your application
@@ -49,7 +49,7 @@ const features = [
   },
   {
     title: <>Extensible</>,
-    imageUrl: "img/undraw_docusaurus_react.svg",
+    imageUrl: "img/undraw_building_blocks.svg",
     description: (
       <>
         Write hooks in JavaScript to customize requests and responses flowing
@@ -59,7 +59,7 @@ const features = [
   },
   {
     title: <>Free and Open Source</>,
-    imageUrl: "img/undraw_docusaurus_react.svg",
+    imageUrl: "img/undraw_happy_music.svg",
     description: (
       <>
         Retransmit Core is Free and Open Source. We are actively looking for
@@ -75,7 +75,7 @@ function Feature({ imageUrl, title, description }) {
     <div className={classnames("col col--4", styles.feature)}>
       {imgUrl && (
         <div className="text--center">
-          <img className={styles.featureImage} src={imgUrl} alt={title} />
+          <img className={styles.featureImage}  src={imgUrl} alt={title} />
         </div>
       )}
       <h3>{title}</h3>
