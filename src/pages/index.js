@@ -42,8 +42,8 @@ const features = [
     imageUrl: "img/undraw_dashboard.svg",
     description: (
       <>
-        Real-time dashboards to see what's happening across your application
-        stack. Alerts when your servers go south.
+        Real-time dashboards to see what's happening across your stack. Alerts
+        when your servers go south. This feature is Work-in-progress.
       </>
     ),
   },
@@ -75,7 +75,7 @@ function Feature({ imageUrl, title, description }) {
     <div className={classnames("col col--4", styles.feature)}>
       {imgUrl && (
         <div className="text--center">
-          <img className={styles.featureImage}  src={imgUrl} alt={title} />
+          <img className={styles.featureImage} src={imgUrl} alt={title} />
         </div>
       )}
       <h3>{title}</h3>
