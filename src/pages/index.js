@@ -85,16 +85,17 @@ const features = [
           padding: "2em",
           borderRadius: "1em",
           backgroundColor: "rgb(170, 198, 168)",
+          color: "black",
           minHeight: "20em",
         }}
       >
         <h1>Commercial Support?</h1>
         <p>
           Retransmit Enterprise will be available after our
-          beta. It will include additional features like auto-scaling, more
+          beta. It will include better support for auto-scaling, more
           monitoring and alerting options, out-of-the-box support for cloud
-          providers, more integrations such as Kafka, additional authentication
-          options, metering etc. And of course, 24x7 technical support.
+          providers, additional integrations such as Kafka, authentication
+          providers, metering etc. And of course, 24x7 technical support.
         </p>
         <p>
           We expect to launch Retransmit Enterprise private betas in September. Join our wait
