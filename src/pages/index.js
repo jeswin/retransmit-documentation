@@ -38,12 +38,12 @@ const features = [
     ),
   },
   {
-    title: <>Analytics and Monitoring</>,
-    imageUrl: "img/undraw_dashboard.svg",
+    title: <>A Capable Reverse-Proxy</>,
+    imageUrl: "img/undraw_server_cluster.svg",
     description: (
       <>
-        Real-time dashboards to see what's happening across your stack. Alerts
-        when your servers go south. This feature is Work-in-progress.
+        SSL termination, configurable caching, and optional stream mode for high
+        performance. Supports Node.JS cluster mode.
       </>
     ),
   },
@@ -67,12 +67,63 @@ const features = [
       </>
     ),
   },
+  {
+    title: <>Analytics and Monitoring</>,
+    imageUrl: "img/undraw_dashboard.svg",
+    description: (
+      <>
+        Real-time dashboards to see what's happening across your stack. Alerts
+        when your servers go south. This feature is Work-in-progress.
+      </>
+    ),
+  },
+  {
+    html: (
+      <div
+        style={{
+          margin: "2em 0 0 0",
+          padding: "2em",
+          borderRadius: "1em",
+          backgroundColor: "rgb(170, 198, 168)",
+          minHeight: "20em",
+        }}
+      >
+        <h1>Commercial Support?</h1>
+        <p>
+          Retransmit Enterprise will be available after our
+          beta. It will include additional features like auto-scaling, more
+          monitoring and alerting options, out-of-the-box support for cloud
+          providers, more integrations such as Kafka, additional authentication
+          options, metering etc. And of course, 24x7 technical support.
+        </p>
+        <p>
+          We expect to launch Retransmit Enterprise private betas in September. Join our wait
+          list for early bird prices.
+        </p>
+      </div>
+    ),
+    size: 2,
+  },
 ];
 
-function Feature({ imageUrl, title, description }) {
+function Feature({ html, imageUrl, title, size, description }) {
   const imgUrl = useBaseUrl(imageUrl);
-  return (
-    <div className={classnames("col col--4", styles.feature)}>
+  return html ? (
+    <div
+      className={classnames(
+        `col ${size === 2 ? "col--8" : "col--4"}`,
+        styles.feature
+      )}
+    >
+      {html}
+    </div>
+  ) : (
+    <div
+      className={classnames(
+        `col ${size === 2 ? "col--8" : "col--4"}`,
+        styles.feature
+      )}
+    >
       {imgUrl && (
         <div className="text--center">
           <img className={styles.featureImage} src={imgUrl} alt={title} />
