@@ -38,6 +38,14 @@ const features = [
     ),
   },
   {
+    html: (
+      <div style={{ textAlign: "center", padding: "4em" }}>
+        <h1>&ldquo;Super easy to get started.&rdquo;</h1>
+      </div>
+    ),
+    colSize: 12,
+  },
+  {
     title: <>A Capable Reverse-Proxy</>,
     imageUrl: "img/undraw_server_cluster.svg",
     description: (
@@ -67,6 +75,17 @@ const features = [
       </>
     ),
   },
+
+  {
+    html: (
+      <div style={{ textAlign: "center", padding: "4em" }}>
+        <h1>
+          &ldquo;Don't start with complexity. Scale up as you grow..&rdquo;
+        </h1>
+      </div>
+    ),
+    colSize: 12,
+  },
   {
     title: <>Analytics and Monitoring</>,
     imageUrl: "img/undraw_dashboard.svg",
@@ -89,42 +108,37 @@ const features = [
           minHeight: "20em",
         }}
       >
-        <h1>Commercial Support?</h1>
+        <h2>Commercial Support?</h2>
         <p>
-          Retransmit Enterprise will be available after our
-          beta. It will include better support for auto-scaling, more
-          monitoring and alerting options, out-of-the-box support for cloud
-          providers, additional integrations such as Kafka, authentication
-          providers, metering and more. And of course, 24x7 technical support.
+          Retransmit Enterprise will be available after our beta. It will
+          include better support for auto-scaling, more monitoring and alerting
+          options, out-of-the-box support for cloud providers, additional
+          integrations such as Kafka, authentication providers, metering and
+          more. And of course, 24x7 technical support.
         </p>
         <p>
-          We expect to launch Retransmit Enterprise private betas in September. Join our wait
-          list for early bird prices.
+          We expect to launch Retransmit Enterprise private betas in September.
+          Join our wait list for early bird prices.
         </p>
       </div>
     ),
-    size: 2,
+    colSize: 8,
   },
 ];
 
-function Feature({ html, imageUrl, title, size, description }) {
+function Feature({ html, imageUrl, title, colSize, description }) {
   const imgUrl = useBaseUrl(imageUrl);
   return html ? (
     <div
       className={classnames(
-        `col ${size === 2 ? "col--8" : "col--4"}`,
+        `col ${typeof colSize !== "undefined" ? `col--${colSize}` : "col--4"}`,
         styles.feature
       )}
     >
       {html}
     </div>
   ) : (
-    <div
-      className={classnames(
-        `col ${size === 2 ? "col--8" : "col--4"}`,
-        styles.feature
-      )}
-    >
+    <div className={classnames("col col--4", styles.feature)}>
       {imgUrl && (
         <div className="text--center">
           <img className={styles.featureImage} src={imgUrl} alt={title} />
