@@ -95,7 +95,7 @@ const features = [
           beta. It will include better support for auto-scaling, more
           monitoring and alerting options, out-of-the-box support for cloud
           providers, additional integrations such as Kafka, authentication
-          providers, metering etc. And of course, 24x7 technical support.
+          providers, metering and more. And of course, 24x7 technical support.
         </p>
         <p>
           We expect to launch Retransmit Enterprise private betas in September. Join our wait
