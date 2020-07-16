@@ -39,7 +39,7 @@ const features = [
   },
   {
     html: (
-      <div style={{ textAlign: "center", padding: "4em" }}>
+      <div style={{ textAlign: "center", padding: "4em 0" }}>
         <h1>&ldquo;Super easy to get started.&rdquo;</h1>
       </div>
     ),
@@ -78,9 +78,9 @@ const features = [
 
   {
     html: (
-      <div style={{ textAlign: "center", padding: "4em" }}>
+      <div style={{ textAlign: "center", padding: "4em 0" }}>
         <h1>
-          &ldquo;Don't start with complexity. Scale up as you grow..&rdquo;
+          &ldquo;Don't start with complexity. Scale up as you grow.&rdquo;
         </h1>
       </div>
     ),
