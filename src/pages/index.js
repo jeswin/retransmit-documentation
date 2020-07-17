@@ -40,7 +40,13 @@ const features = [
   {
     html: (
       <div style={{ textAlign: "center", padding: "4em 0" }}>
-        <h1>&ldquo;Plenty of examples to help you get started.&rdquo;</h1>
+        <h1>
+          &ldquo;Plenty of{" "}
+          <a style={{ textDecoration: "underline" }} href="https://github.com/retransmit/retransmit-examples">
+            examples
+          </a>{" "}
+          to help you get started.&rdquo;
+        </h1>
       </div>
     ),
     colSize: 12,
@@ -70,8 +76,8 @@ const features = [
     imageUrl: "img/undraw_happy_music.svg",
     description: (
       <>
-        Retransmit Core is Free and Open Source. We are actively looking for
-        contributors and testers. Check our GitHub profile.
+        Retransmit Core is Free and MIT-licensed Open Source. We are actively looking for
+        contributors. Check our GitHub profile.
       </>
     ),
   },
@@ -79,9 +85,7 @@ const features = [
   {
     html: (
       <div style={{ textAlign: "center", padding: "4em 0" }}>
-        <h1>
-          &ldquo;Don't start with complexity. Scale up as needed.&rdquo;
-        </h1>
+        <h1>&ldquo;Don't start with complexity. Scale up as needed.&rdquo;</h1>
       </div>
     ),
     colSize: 12,
