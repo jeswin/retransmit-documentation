@@ -6,7 +6,7 @@ title: Getting Started
 The first step is to install Retransmit. Let's assume you're going to install it with npm on Node.JS
 
 ```sh
-npm install -g retransmit.
+npm install -g @retransmit/gateway
 ```
 
 There are two command line options that you need to know.

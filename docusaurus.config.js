@@ -21,11 +21,17 @@ module.exports = {
           position: "left",
         },
         {
-          to: "pricing/",
-          activeBasePath: "pricing",
-          label: "Pricing",
+          to: "releases/",
+          activeBasePath: "releases",
+          label: "Releases",
           position: "left",
         },
+        // {
+        //   to: "pricing/",
+        //   activeBasePath: "pricing",
+        //   label: "Pricing",
+        //   position: "left",
+        // },
         { to: "blog", label: "Blog", position: "left" },
         {
           href: "https://github.com/retransmit/retransmit",

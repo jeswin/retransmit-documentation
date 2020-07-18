@@ -8,6 +8,6 @@ During the beta, we recommend that you install Retransmit using Node. Docker ima
 ## Using Node
 
 ```sh
-npm install -g retransmit
+npm install -g @retransmit/gateway
 ```
 
