@@ -1,5 +1,4 @@
 ---
-id: circuit-breaker
 title: Circuit Breaker
 sidebar_label: Circuit Breaker
 ---

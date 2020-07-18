@@ -1,5 +1,4 @@
 ---
-id: websockets
 title: Web Sockets
 sidebar_label: Web Sockets
 ---
