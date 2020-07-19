@@ -4,7 +4,7 @@ title: Introduction
 sidebar_label: Introduction
 ---
 
-Retransmit is an API Gateway....
+Prism is an API Gateway....
 
 ## Markdown Syntax
 

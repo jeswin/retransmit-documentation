@@ -4,7 +4,7 @@ title: Authentication
 sidebar_label: Authentication
 ---
 
-Currently Retransmit only supports JWT based authentication. It internally uses the [https://github.com/auth0/node-jsonwebtoken](jsonwebtoken) library. So all the options supported by jsonwebtoken can be used here.
+Currently Prism only supports JWT based authentication. It internally uses the [https://github.com/auth0/node-jsonwebtoken](jsonwebtoken) library. So all the options supported by jsonwebtoken can be used here.
 
 JWT is typically passed in the Authorization header as follows:
 
@@ -122,7 +122,7 @@ module.exports = {
 
 ### Customize Token Verification
 
-By default, retransmit will simple check the existence of the JWT. In many cases, you want to do more - such as whether certain roles are present. That can be done with the 'verify' hook.
+By default, Prism will simple check the existence of the JWT. In many cases, you want to do more - such as whether certain roles are present. That can be done with the 'verify' hook.
 
 ```ts
 // Example 6
@@ -144,7 +144,7 @@ module.exports = {
 
 ### Custom Error Response
 
-Retransmit sends HTTP 401 with the Body "Unauthorized." as the response. But this can be changed with the 'errorStatus' and 'errorBody' options. errorBody can also take a JSON object.
+Prism sends HTTP 401 with the Body "Unauthorized." as the response. But this can be changed with the 'errorStatus' and 'errorBody' options. errorBody can also take a JSON object.
 
 ```ts
 // Example 7

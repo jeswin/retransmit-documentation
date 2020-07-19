@@ -3,7 +3,7 @@ id: request-transform
 title: Request Transform
 ---
 
-Retransmit gives you a simple way to transform requests sent to various services.
+Prism gives you a simple way to transform requests sent to various services.
 
 The simplest approach tool to use here is the 'mapping' property in configuration. In the following example the header field "x-app-token" is mapped to the field "x-auth-token". So userservice will see "x-auth-token" instead.
 

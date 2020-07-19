@@ -1,6 +1,6 @@
 module.exports = {
   title: "Retransmit",
-  tagline: "HTTP and WebSocket API Gateway",
+  tagline: "Tools for Microservices",
   url: "https://retransmit.netlify.com",
   baseUrl: "/",
   favicon: "img/favicon.ico",
@@ -34,7 +34,7 @@ module.exports = {
         // },
         { to: "blog", label: "Blog", position: "left" },
         {
-          href: "https://github.com/retransmit/retransmit",
+          href: "https://github.com/retransmit",
           label: "GitHub",
           position: "right",
         },
@@ -65,7 +65,7 @@ module.exports = {
           items: [
             {
               label: "GitHub",
-              href: "https://github.com/retransmit/retransmit",
+              href: "https://github.com/retransmit",
             },
             {
               label: "Twitter",
@@ -97,7 +97,7 @@ module.exports = {
       {
         docs: {
           // It is recommended to set document id as docs home page (`docs/` path).
-          homePageId: "gateway/intro",
+          homePageId: "prism/intro",
           sidebarPath: require.resolve("./sidebars.js"),
           // // Please change this to your repo.
           // editUrl:

@@ -26,7 +26,7 @@ module.exports = {
 
 As previously discussed, if accountservice returned `{ "name": "batman" }` and messaging service returned `{ "messages": 10 }` the final response will be `{ "name": "batman", "messages": 10 }`.
 
-Retransmit merges responses that are received (into a final response body) in the same order in which services are defined in the configuration file. So if account service returned `{ "name": "bruce wayne", "messages": 10 }` instead of `{ "messages": 10 }`, the final response will be `{ "name": "bruce wayne", "messages": 10 }`.
+Prism merges responses that are received (into a final response body) in the same order in which services are defined in the configuration file. So if account service returned `{ "name": "bruce wayne", "messages": 10 }` instead of `{ "messages": 10 }`, the final response will be `{ "name": "bruce wayne", "messages": 10 }`.
 
 ### Merge Fields
 

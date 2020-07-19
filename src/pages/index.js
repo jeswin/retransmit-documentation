@@ -12,7 +12,7 @@ const features = [
     imageUrl: "img/undraw_product_teardown.svg",
     description: (
       <>
-        Retransmit is designed to handle the plumbing between Microservices and
+        Prism is designed to handle the plumbing between Microservices and
         let developers focus on writing business logic.
       </>
     ),
@@ -32,7 +32,7 @@ const features = [
     imageUrl: "img/websocket.svg",
     description: (
       <>
-        Retransmit can stream responses to WebSocket clients by polling multiple
+        Prism can stream responses to WebSocket clients by polling multiple
         backend services or by reading from Redis queues.
       </>
     ),
@@ -67,7 +67,7 @@ const features = [
     description: (
       <>
         Write hooks in JavaScript to customize requests and responses flowing
-        through Retransmit. Write plugins to handle custom protocols.
+        through Prism. Write plugins to handle custom protocols.
       </>
     ),
   },
@@ -76,7 +76,7 @@ const features = [
     imageUrl: "img/undraw_happy_music.svg",
     description: (
       <>
-        Retransmit Core is Free and MIT-licensed Open Source. We are actively looking for
+        Prism is Free and MIT-licensed Open Source. We are actively looking for
         contributors. Check our GitHub profile.
       </>
     ),
@@ -114,7 +114,7 @@ const features = [
       >
         <h2>Commercial Support?</h2>
         <p>
-          Retransmit Enterprise will be available after our beta. It will
+          Retransmit Enterprise Tools will be available after our beta. It will
           include better support for auto-scaling, more monitoring and alerting
           options, out-of-the-box support for cloud providers, additional
           integrations such as Kafka, authentication providers, metering and
@@ -160,12 +160,12 @@ function Home() {
   return (
     <Layout
       title={siteConfig.title}
-      description="Description will go into a meta tag in <head />"
+      description="API Gateway"
     >
       <header className={classnames("hero hero--primary", styles.heroBanner)}>
         <div className="container">
-          <h1 className="hero__title">{siteConfig.title}</h1>
-          <p className="hero__subtitle">{siteConfig.tagline}</p>
+          <h1 className="hero__title">Prism</h1>
+          <p className="hero__subtitle">HTTP and WebSocket Gateway</p>
           <div className={styles.buttons}>
             <Link
               className={classnames(

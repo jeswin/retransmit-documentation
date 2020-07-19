@@ -4,7 +4,7 @@ title: rollback
 sidebar_label: Rollback
 ---
 
-When Retransmit is aggregating responses from multiple backend services, it is possible that one of them might fail. When that happens, Retransmit can notify the other services that they might need to rollback the last operation. For instance, if an HTTP POST request to /users calls userservice and accountservice and accountservice fails after userservice has already succeeded, it might be desirable to undo the changes in userservice for consistency.
+When Prism is aggregating responses from multiple backend services, it is possible that one of them might fail. When that happens, Prism can notify the other services that they might need to rollback the last operation. For instance, if an HTTP POST request to /users calls userservice and accountservice and accountservice fails after userservice has already succeeded, it might be desirable to undo the changes in userservice for consistency.
 
 This can be done with the rollback function. Let's take an example.
 
