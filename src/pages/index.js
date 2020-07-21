@@ -12,8 +12,8 @@ const features = [
     imageUrl: "img/undraw_product_teardown.svg",
     description: (
       <>
-        Prism is designed to handle the plumbing between Microservices and
-        let developers focus on writing business logic.
+        Prism is designed to handle the plumbing between Microservices and let
+        developers focus on writing business logic.
       </>
     ),
   },
@@ -42,7 +42,10 @@ const features = [
       <div style={{ textAlign: "center", padding: "4em 0" }}>
         <h1>
           &ldquo;Plenty of{" "}
-          <a style={{ textDecoration: "underline" }} href="https://github.com/retransmit/retransmit-examples">
+          <a
+            style={{ textDecoration: "underline" }}
+            href="https://github.com/retransmit/retransmit-examples"
+          >
             examples
           </a>{" "}
           to help you get started.&rdquo;
@@ -158,20 +161,22 @@ function Home() {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
   return (
-    <Layout
-      title={siteConfig.title}
-      description="API Gateway"
-    >
-      <header className={classnames("hero hero--primary", styles.heroBanner)}>
+    <Layout title={siteConfig.title} description="API Gateway">
+      <header
+        className={classnames("hero hero--primary hero-bg", styles.heroBanner)}
+      >
         <div className="container">
-          <h1 className="hero__title">Prism</h1>
-          <p className="hero__subtitle">HTTP and WebSocket Gateway</p>
+          <h1 className="hero__title" style={{ color: "white" }}>
+            Prism
+          </h1>
+          <p className="hero__subtitle" style={{ color: "white" }}>HTTP and WebSocket Gateway</p>
           <div className={styles.buttons}>
             <Link
               className={classnames(
                 "button button--outline button--secondary button--lg",
-                styles.getStarted
+                styles.getStarted                
               )}
+              style={{ color: "white", backgroundColor: "rgb(128, 116, 116)" }}
               to={useBaseUrl("docs/")}
             >
               Get Started
