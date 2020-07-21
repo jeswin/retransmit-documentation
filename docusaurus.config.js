@@ -7,6 +7,7 @@ module.exports = {
   organizationName: "retransmit", // Usually your GitHub org/user name.
   projectName: "retransmit.io", // Usually your repo name.
   themeConfig: {
+    defaultDarkMode: true,
     navbar: {
       title: "Retransmit",
       logo: {
