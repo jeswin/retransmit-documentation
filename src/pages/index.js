@@ -107,25 +107,24 @@ const features = [
     html: (
       <div
         style={{
-          margin: "2em 0 0 0",
-          padding: "2em",
-          borderRadius: "1em",
-          backgroundColor: "rgb(170, 198, 168)",
-          color: "black",
-          minHeight: "20em",
+          
         }}
+        className="homepage-highlight"
       >
         <h2>Commercial Support?</h2>
         <p>
-          Retransmit Enterprise Tools will be available after our beta. It will
+          Retransmit Enterprise Stack will be available after our beta. It will
           include better support for auto-scaling, more monitoring and alerting
           options, out-of-the-box support for cloud providers, additional
           integrations such as Kafka, authentication providers, metering and
           more. And of course, 24x7 technical support.
         </p>
         <p>
-          We expect to launch Retransmit Enterprise private betas in September.
-          Join our wait list for early bird prices.
+          We expect to launch the Retransmit Stack private beta in September.{" "}
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeIvIn70pFPLGn4nnJlc2WrH7gKgzf1HWYi3Wu83Vadvj6eZQ/viewform?usp=sf_link">
+            Join our wait list
+          </a>{" "}
+          for early bird prices.
         </p>
       </div>
     ),
@@ -169,12 +168,14 @@ function Home() {
           <h1 className="hero__title" style={{ color: "white" }}>
             Prism
           </h1>
-          <p className="hero__subtitle" style={{ color: "white" }}>HTTP and WebSocket Gateway</p>
+          <p className="hero__subtitle" style={{ color: "white" }}>
+            HTTP and WebSocket Gateway
+          </p>
           <div className={styles.buttons}>
             <Link
               className={classnames(
                 "button button--outline button--secondary button--lg",
-                styles.getStarted                
+                styles.getStarted
               )}
               style={{ color: "white", backgroundColor: "rgb(128, 116, 116)" }}
               to={useBaseUrl("docs/")}

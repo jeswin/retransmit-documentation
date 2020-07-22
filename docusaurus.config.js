@@ -89,7 +89,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Retransmit, Inc. Icons from undraw.co. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Retransmit, Inc. Made in Bangalore with people across the world.`,
     },
   },
   presets: [
@@ -98,7 +98,7 @@ module.exports = {
       {
         docs: {
           // It is recommended to set document id as docs home page (`docs/` path).
-          homePageId: "prism/intro",
+          homePageId: "prism/getting-started",
           sidebarPath: require.resolve("./sidebars.js"),
           // // Please change this to your repo.
           // editUrl:

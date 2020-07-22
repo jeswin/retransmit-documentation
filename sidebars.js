@@ -1,8 +1,6 @@
 module.exports = {
   someSidebar: {
     "Prism": [
-      "prism/intro",
-      "prism/install",
       "prism/getting-started",
       "prism/response-aggregation",
       "prism/request-transform",

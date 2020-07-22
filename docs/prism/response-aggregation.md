@@ -30,7 +30,7 @@ Prism merges responses that are received (into a final response body) in the sam
 
 ### Merge Fields
 
-Fields being overwritten is a problem. Fortunately, there's an easy fix - 'mergeField'.
+Fields being overwritten can be a problem. Fortunately, there's an easy fix - 'mergeField'.
 
 ```ts
 module.exports = {
