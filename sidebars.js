@@ -1,6 +1,6 @@
 module.exports = {
   someSidebar: {
-    "Prism": [
+    "Prism API Gateway": [
       "prism/getting-started",
       "prism/response-aggregation",
       "prism/request-transform",
