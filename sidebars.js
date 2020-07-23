@@ -16,6 +16,8 @@ module.exports = {
       "prism/web-jobs",
       "prism/hooks",
       "prism/redis-web-backends",
+      "prism/streams",
+      "prism/cluster",
       "prism/auto-scaling",
       { "Web Sockets": ["prism/websocket/intro"] },
     ],

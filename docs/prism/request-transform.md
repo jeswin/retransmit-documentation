@@ -108,6 +108,15 @@ module.exports = {
     routes: {
       "/users": {
         POST: {
+          onRequest: async (request, responses) => {
+            return {
+              handled: true,
+              response: {
+                status: 200,
+                body: 'It worked!'
+              }
+            }
+          },
           services: {
             userservice: {
               type: "http",
@@ -116,16 +125,10 @@ module.exports = {
             messageservice: {
               type: "http" as "http",
               url: "http://localhost:6667/messages",
-              onRequest: async (request, responses) => {
-                return {
-                  handled: true,
-                  response: {
-                    status: 200,
-                    body: 'It worked!'
-                  }}}}}}}}}};
+              }}}}}}};
 ```
 
-Note that the onRequest function can return a promise. So you're free to call an external service as well.
+Note that the onRequest function can return a promise. So you're free to call an external service as well. If it returned void (or undefined), the Prism proceeds with the request as usual.
 
 Like this:
 ```ts
@@ -143,3 +146,63 @@ module.exports = {
       }
     }}}    
 ```
+
+In the previous examples, you've seen onRequest being applied for a route. But it can be applied to all routes as well as a single specific service.
+
+To apply globally to all routes:
+
+```ts
+module.exports = {
+  http: {
+    onRequest: async (request, responses) => {
+      if (!request.headers["x-custom-auth-token"]) {
+        return {
+          handled: true,
+          response: {
+            status: 401,
+            body: 'No cookie for you!'
+          }
+        }
+      }
+    },
+    routes: {
+      "/users": {
+        POST: {          
+          services: {
+            userservice: {
+              type: "http",
+              url: "http://localhost:6666/users",
+            },
+            messageservice: {
+              type: "http" as "http",
+              url: "http://localhost:6667/messages",
+              }}}}}}};
+```
+
+Sometimes you want to customize a request to a single route. That's easy.
+
+```ts
+module.exports = {
+  http: {    
+    routes: {
+      "/users": {
+        POST: {          
+          services: {
+            userservice: {
+              type: "http",
+              url: "http://localhost:6666/users",
+              onRequest: async (request, responses) => {
+                const responseFromCache = await getUserFromCache(request.headers.userid);
+                if (responseFromCache) {                
+                  return {
+                    handled: true,
+                    response: {
+                      status: 200,
+                      body: responseFromCache.data,
+                    }
+                  };
+                }}},
+            messageservice: {
+              type: "http" as "http",
+              url: "http://localhost:6667/messages",
+              }}}}}}};

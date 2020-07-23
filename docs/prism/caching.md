@@ -4,7 +4,7 @@ title: Caching
 sidebar_label: Caching
 ---
 
-Response Caching can be enabled for all HTTP routes with explicit opt-out or for specific routes.
+Response Caching can be enabled for all HTTP routes (with explicit opt-out) or for specific routes.
 
 To enable for all services, define your cache settings under 'http'.
 
@@ -53,7 +53,7 @@ module.exports = {
 
 ### In-Memory and Redis Cache
 
-For production, you should always be using redis for storing state. In-state exists only for development workflows. The default is in-memory state.
+For production, you should always be using redis for storing state. In-memory state exists primarily for development workflows. The default is in-memory state.
 
 To store application state in redis:
 
@@ -88,7 +88,7 @@ module.exports = {
 
 ### Varying by headers, query or body
 
-You can store caches separately for each 
+Cached data can be stored separately for combinations of header, query or body fields. The following example caches for a combination of a specific header named 'userid' and a query parameter named 'location'.
 
 ```ts
 // Cache GET /users for 20 seconds

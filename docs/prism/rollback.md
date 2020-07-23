@@ -1,6 +1,6 @@
 ---
 id: rollback
-title: rollback
+title: Rollback
 sidebar_label: Rollback
 ---
 
