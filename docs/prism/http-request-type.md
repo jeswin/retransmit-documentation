@@ -1,5 +1,5 @@
 ---
-id: http-request
+id: http-request-type
 title: Http Request Type
 sidebar_label: Http Request
 ---

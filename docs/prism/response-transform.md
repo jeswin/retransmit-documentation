@@ -3,15 +3,49 @@ id: response-transform
 title: Response Transform
 ---
 
-You can write JSX and use React components within your Markdown thanks to [MDX](https://mdxjs.com/).
+By implementing the onResponse hook, the response can be transformed before being sent to the client. 
 
-export const Highlight = ({children, color}) => ( <span style={{
-      backgroundColor: color,
-      borderRadius: '2px',
-      color: '#fff',
-      padding: '0.2rem',
-    }}>{children}</span> );
+The signature of the onResponse hook is:
 
-<Highlight color="#25c2a0">Docusaurus green</Highlight> and <Highlight color="#1877F2">Facebook blue</Highlight> are my favorite colors.
+```ts
+type onResponse = (
+    // Response formed by Prism
+    response: HttpResponse,
+    // Incoming Request
+    request: HttpRequest,
+    // Responses received from backend services
+    fetchedResponses: FetchedHttpResponse[]
+  ) => Promise<HttpResponse | void>;
+```
 
-I can write **Markdown** alongside my _JSX_!
+You should look up the type definitions for [HttpRequest](http-request-type), [HttpResponse](http-response-type) and [FetchedResponse](fetched-response-type).
+
+Here's an example of how to implement an onResponse hook:
+
+```ts
+module.exports = {
+  http: {
+    routes: {
+      "/users": {
+        POST: {
+          services: {
+            messageservice: {
+              type: "http" as "http",
+              url: "http://localhost:6667/messages",
+              onResponse: async (response, request, fetchedResponses) => {
+                // Get the response object from a fetchedResponse object
+                const backendResponses = fetchedResponses.map(
+                  (x) => x.response
+                );
+                // Concat the body of all responses
+                const concatenatedData = backendResponses
+                  .map((x) => x.body.toString())
+                  .join("--");
+                // Send it back.
+                return {
+                  status: 200,
+                  body: concatenatedData
+                }
+              }}}}}}}};
+```
+

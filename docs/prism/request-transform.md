@@ -98,7 +98,7 @@ export type Result =
 
 If the handled is false, you need to return a modified request. If handled is set to true, Prism will expect a response which can be immediately sent to the client. As you would expect, if handled is set to true none of the backend services are invoked. If it returns nothing, Prism proceeds as if without the hook.
 
-What are HttpRequest and HttpResponse objects? See the type definition for [HttpRequest](http-request) and [HttpResponse](http-response).
+What are HttpRequest and HttpResponse objects? See the type definition for [HttpRequest](http-request-type) and [HttpResponse](http-response-type).
 
 Let's look at an example.
 

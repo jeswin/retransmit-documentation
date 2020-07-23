@@ -1,5 +1,5 @@
 ---
-id: http-response
+id: http-response-type
 title: Http Response
 sidebar_label: Http Response
 ---
