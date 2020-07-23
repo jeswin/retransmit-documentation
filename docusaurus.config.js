@@ -3,7 +3,7 @@ module.exports = {
   tagline: "Tools for Microservices",
   url: "https://retransmit.netlify.com",
   baseUrl: "/",
-  favicon: "img/favicon.ico",
+  favicon: "img/logo.ico",
   organizationName: "retransmit", // Usually your GitHub org/user name.
   projectName: "retransmit.io", // Usually your repo name.
   themeConfig: {
@@ -12,7 +12,7 @@ module.exports = {
       title: "Retransmit",
       logo: {
         alt: "Retransmit Logo",
-        src: "img/logo.svg",
+        src: "img/logo-small.png",
       },
       links: [
         {

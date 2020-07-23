@@ -105,12 +105,7 @@ const features = [
   },
   {
     html: (
-      <div
-        style={{
-          
-        }}
-        className="homepage-highlight"
-      >
+      <div style={{}} className="homepage-highlight">
         <h2>Commercial Support?</h2>
         <p>
           Retransmit Enterprise Stack will be available after our beta. It will
@@ -164,7 +159,7 @@ function Home() {
       <header
         className={classnames("hero hero--primary hero-bg", styles.heroBanner)}
       >
-        <div className="container">
+        <div className="container">          
           <h1 className="hero__title" style={{ color: "white" }}>
             Prism
           </h1>
