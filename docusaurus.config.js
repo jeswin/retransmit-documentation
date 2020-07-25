@@ -1,7 +1,7 @@
 module.exports = {
   title: "Retransmit",
   tagline: "Tools for Microservices",
-  url: "https://retransmit.netlify.com",
+  url: "https://retransmit.io",
   baseUrl: "/",
   favicon: "img/logo.ico",
   organizationName: "retransmit", // Usually your GitHub org/user name.
