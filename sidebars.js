@@ -17,6 +17,7 @@ module.exports = {
       "prism/streams",
       "prism/cluster",
       "prism/redis-web-backends",
+      "prism/releases",
       { "Web Sockets": ["prism/websocket/intro"] },
     ],
     More: ["more/contributing", "more/license"],
