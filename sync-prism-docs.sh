@@ -1,3 +1,8 @@
+# Copy docs from Prism Docs
+rm -rf docs/prism
+cp -r ../prism-docs/docs docs/prism
+
+# Start watching
 bashocmd=$(cat <<"EOF"
 -j
   x.split(" ")
