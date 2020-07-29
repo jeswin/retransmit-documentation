@@ -98,7 +98,7 @@ module.exports = {
       {
         docs: {
           // It is recommended to set document id as docs home page (`docs/` path).
-          homePageId: "prism/getting-started",
+          homePageId: "prism/http/getting-started",
           sidebarPath: require.resolve("./sidebars.js"),
           // // Please change this to your repo.
           // editUrl:
