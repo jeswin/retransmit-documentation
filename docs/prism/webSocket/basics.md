@@ -2,9 +2,9 @@
 title: Basics
 ---
 
-Prism can act as a Gateway for WebSocket connections, allowing multiple backend services to send data to connected clients.
+Prism can act as a Gateway for WebSocket connections, allowing multiple backend services to send data to connected clients. We recommend building WebSocket backend services using Redis Channels and Pub-Sub, but Prism can service connections by periodically polling Http Services as well. Let's get into details.
 
-The best way to write backend services which talk to WebSocket clients (using Prism) is by using Redis Channels. See the configuration below.
+A typical configurations will be as below.
 
 ```ts
 const config: UserAppConfig = {
@@ -16,10 +16,10 @@ const config: UserAppConfig = {
             type: "redis",
             requestChannel: "input",
           },
-          messageservice: {
+          chartservice: {
             type: "redis",
             requestChannel: "input",
-          }
+          },
         },
       },
     },
@@ -30,26 +30,21 @@ const config: UserAppConfig = {
 };
 ```
 
-Let's go step-by-step. When a new websocket connection is established on "/quotes", Prism will post an onConnect message to the requestChannels mentioned in the configuration against that endpoint.
+Whenver a message is received from the client, it is serialized and send sent to the channels mentioned in 'requestChannel'. Since multiple services can subscribe to the same channel, it's probably best for all services on a route ("/quotes" in the example above) to use the same channel to receive messages.
 
-It is not necessary to handle the onConnect message. But if you want to, it looks looks like this for Redis WebSocket Services:
+A serialized incoming message looks like this:
 
 ```ts
 export type WebSocketRequestBase = {
-  type: "connect";
   id: string;
+  type: "message";
   route: string;
   path: string;
   remoteAddress: string | undefined;
   remotePort: number | undefined;
+  request: string;
   responseChannel: string;
 };
 ```
 
-
-
-
-When a WebSocket connection is initialized or when a message is received from a client, 
-
-Let's look at a basic configuration:
-
+Since WebSocket offers asynchronous communication, services can send messages to clients whenver it wants. The 'id' field in the incoming message uniquely identifies an active connection, and does not change as long as the connection is kept alive. So to 
