@@ -89,7 +89,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Retransmit, Inc. Made in Bangalore with people across the world.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Retransmit, Inc. Made in Bangalore.`,
     },
   },
   presets: [
