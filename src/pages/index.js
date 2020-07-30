@@ -159,8 +159,10 @@ function Home() {
       <header
         className={classnames("hero hero--primary hero-bg", styles.heroBanner)}
       >
-        <div className="container">          
-          <h1 className="hero__title" style={{ color: "white" }}>
+        <div className="container">
+          <h1 className="hero__title" style={{ color: "white", lineHeight: "0.7em" }}>
+            <span style={{ fontWeight: "normal", fontSize: "0.4em", opacity: "0.4" }}>Retransmit's</span>
+            <br />
             Prism
           </h1>
           <p className="hero__subtitle" style={{ color: "white" }}>
