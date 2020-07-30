@@ -109,10 +109,9 @@ const features = [
         <h2>Commercial Support?</h2>
         <p>
           Retransmit Enterprise Stack will be available after our beta. It will
-          include better support for auto-scaling, more monitoring and alerting
-          options, out-of-the-box support for cloud providers, additional
-          integrations such as Kafka, authentication providers, metering and
-          more. And of course, 24x7 technical support.
+          include tools for auto-scaling, application monitoring and alerting,
+          out-of-the-box support for cloud providers, dashboards, authentication
+          providers, metering and more. And of course, 24x7 technical support.
         </p>
         <p>
           We expect to launch the Retransmit Stack private beta in September.{" "}
@@ -160,8 +159,19 @@ function Home() {
         className={classnames("hero hero--primary hero-bg", styles.heroBanner)}
       >
         <div className="container">
-          <h1 className="hero__title" style={{ color: "white", lineHeight: "0.7em" }}>
-            <span style={{ fontWeight: "normal", fontSize: "0.4em", opacity: "0.4" }}>Retransmit's</span>
+          <h1
+            className="hero__title"
+            style={{ color: "white", lineHeight: "0.7em" }}
+          >
+            <span
+              style={{
+                fontWeight: "normal",
+                fontSize: "0.4em",
+                opacity: "0.4",
+              }}
+            >
+              Retransmit's
+            </span>
             <br />
             Prism
           </h1>

@@ -9,7 +9,7 @@ module.exports = {
   themeConfig: {
     defaultDarkMode: true,
     navbar: {
-      title: "Retransmit",
+      title: "Retransmit Stack",
       logo: {
         alt: "Retransmit Logo",
         src: "img/logo-small.png",
