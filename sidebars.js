@@ -28,7 +28,11 @@ module.exports = {
       {
         type: "category",
         label: "WebSocket Gateway",
-        items: ["prism/webSocket/basics"],
+        items: [
+          "prism/webSocket/basics",
+          "prism/webSocket/authentication",
+          "prism/webSocket/terminating",
+        ],
         collapsed: false,
       },
     ],
