@@ -41,19 +41,29 @@ const features = [
     html: (
       <div style={{ textAlign: "center", padding: "4em 0" }}>
         <h1>
-          &ldquo;Plenty of{" "}
-          <a
-            style={{ textDecoration: "underline" }}
-            href="https://github.com/retransmit/retransmit-examples"
-          >
-            examples
-          </a>{" "}
-          to help you get started.&rdquo;
+          &ldquo;Easy to extend with JavaScript hooks. Fully Open Source.&rdquo;
         </h1>
       </div>
     ),
     colSize: 12,
   },
+  // {
+  //   html: (
+  //     <div style={{ textAlign: "center", padding: "4em 0" }}>
+  //       <h1>
+  //         &ldquo;Plenty of{" "}
+  //         <a
+  //           style={{ textDecoration: "underline" }}
+  //           href="https://github.com/retransmit/retransmit-examples"
+  //         >
+  //           examples
+  //         </a>{" "}
+  //         to help you get started.&rdquo;
+  //       </h1>
+  //     </div>
+  //   ),
+  //   colSize: 12,
+  // },
   {
     title: <>A Capable Reverse-Proxy</>,
     imageUrl: "img/undraw_server_cluster.svg",
@@ -84,15 +94,14 @@ const features = [
       </>
     ),
   },
-
-  {
-    html: (
-      <div style={{ textAlign: "center", padding: "4em 0" }}>
-        <h1>&ldquo;Don't start with complexity. Scale up as needed.&rdquo;</h1>
-      </div>
-    ),
-    colSize: 12,
-  },
+  // {
+  //   html: (
+  //     <div style={{ textAlign: "center", padding: "4em 0" }}>
+  //       <h1>&ldquo;Don't start with complexity. Scale up as needed.&rdquo;</h1>
+  //     </div>
+  //   ),
+  //   colSize: 12,
+  // },
   {
     title: <>Analytics and Monitoring</>,
     imageUrl: "img/undraw_dashboard.svg",
