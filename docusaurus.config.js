@@ -21,12 +21,6 @@ module.exports = {
           label: "Docs",
           position: "left",
         },
-        {
-          to: "releases/",
-          activeBasePath: "releases",
-          label: "Releases",
-          position: "left",
-        },
         // {
         //   to: "pricing/",
         //   activeBasePath: "pricing",
@@ -51,14 +45,6 @@ module.exports = {
               label: "Introduction",
               to: "docs/",
             },
-            {
-              label: "Get Started",
-              to: "docs/get-started/",
-            },
-            {
-              label: "Documentation",
-              to: "docs/contributing/",
-            },
           ],
         },
         {
@@ -81,15 +67,10 @@ module.exports = {
               label: "Blog",
               to: "blog",
             },
-            // TODO
-            {
-              label: "About",
-              href: "https://www.retransmit.io/about",
-            },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Retransmit, Inc. Made in Bangalore.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Retransmit, Inc.`,
     },
   },
   presets: [
