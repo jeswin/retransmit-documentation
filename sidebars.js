@@ -32,6 +32,7 @@ module.exports = {
           "prism/webSocket/basics",
           "prism/webSocket/authentication",
           "prism/webSocket/terminating",
+          "prism/webSocket/request-transform",
         ],
         collapsed: false,
       },
