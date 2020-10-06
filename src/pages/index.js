@@ -185,7 +185,7 @@ function Home() {
             Prism
           </h1>
           <p className="hero__subtitle" style={{ color: "white" }}>
-            HTTP and WebSocket Gateway
+            HTTP and WebSocket API Gateway
           </p>
           <div className={styles.buttons}>
             <Link
