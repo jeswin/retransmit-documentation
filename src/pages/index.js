@@ -123,7 +123,7 @@ const features = [
           providers, metering and more. And of course, 24x7 technical support.
         </p>
         <p>
-          We expect to launch the Retransmit Stack private beta in September.{" "}
+          We expect to launch the Retransmit Stack private beta in early 2021.{" "}
           <a href="https://docs.google.com/forms/d/e/1FAIpQLSeIvIn70pFPLGn4nnJlc2WrH7gKgzf1HWYi3Wu83Vadvj6eZQ/viewform?usp=sf_link">
             Join our wait list
           </a>{" "}
